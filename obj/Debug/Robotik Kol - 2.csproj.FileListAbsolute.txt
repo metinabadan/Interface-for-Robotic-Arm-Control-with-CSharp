@@ -1,0 +1,10 @@
+C:\Users\metin\source\Robotik Kol\Robotik Kol - 2\bin\Debug\Robotik Kol - 2.exe.config
+C:\Users\metin\source\Robotik Kol\Robotik Kol - 2\bin\Debug\Robotik Kol - 2.exe
+C:\Users\metin\source\Robotik Kol\Robotik Kol - 2\bin\Debug\Robotik Kol - 2.pdb
+C:\Users\metin\source\Robotik Kol\Robotik Kol - 2\obj\Debug\Robotik Kol - 2.csprojAssemblyReference.cache
+C:\Users\metin\source\Robotik Kol\Robotik Kol - 2\obj\Debug\Robotik_Kol___2.Form1.resources
+C:\Users\metin\source\Robotik Kol\Robotik Kol - 2\obj\Debug\Robotik_Kol___2.Properties.Resources.resources
+C:\Users\metin\source\Robotik Kol\Robotik Kol - 2\obj\Debug\Robotik Kol - 2.csproj.GenerateResource.cache
+C:\Users\metin\source\Robotik Kol\Robotik Kol - 2\obj\Debug\Robotik Kol - 2.csproj.CoreCompileInputs.cache
+C:\Users\metin\source\Robotik Kol\Robotik Kol - 2\obj\Debug\Robotik Kol - 2.exe
+C:\Users\metin\source\Robotik Kol\Robotik Kol - 2\obj\Debug\Robotik Kol - 2.pdb
