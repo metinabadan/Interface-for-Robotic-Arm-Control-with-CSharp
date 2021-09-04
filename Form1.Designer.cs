@@ -40,7 +40,7 @@ namespace Robotik_Kol___2
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_baglantidurumu = new System.Windows.Forms.Label();
             this.btn_baglantidurumu = new System.Windows.Forms.Button();
-            this.btn_yenile = new System.Windows.Forms.Button();
+            this.btn_com_yenile = new System.Windows.Forms.Button();
             this.lbl_anlikveri = new System.Windows.Forms.Label();
             this.txtbox_anlikveri = new System.Windows.Forms.TextBox();
             this.btn_kontrolubaslat = new System.Windows.Forms.Button();
@@ -56,6 +56,17 @@ namespace Robotik_Kol___2
             this.btn_s6_sol = new System.Windows.Forms.Button();
             this.btn_s5_sag = new System.Windows.Forms.Button();
             this.btn_s5_sol = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.bar_s1 = new System.Windows.Forms.ProgressBar();
+            this.bar_s3 = new System.Windows.Forms.ProgressBar();
+            this.bar_s2 = new System.Windows.Forms.ProgressBar();
+            this.bar_s5 = new System.Windows.Forms.ProgressBar();
+            this.bar_s6 = new System.Windows.Forms.ProgressBar();
+            this.bar_s4 = new System.Windows.Forms.ProgressBar();
+            this.btn_motor_yenile = new System.Windows.Forms.Button();
+            this.btn_manuel_com3 = new System.Windows.Forms.Button();
+            this.btn_manuel_com5 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_comport
@@ -135,16 +146,16 @@ namespace Robotik_Kol___2
             this.btn_baglantidurumu.Text = "                      ";
             this.btn_baglantidurumu.UseVisualStyleBackColor = true;
             // 
-            // btn_yenile
+            // btn_com_yenile
             // 
-            this.btn_yenile.Location = new System.Drawing.Point(12, 67);
-            this.btn_yenile.Name = "btn_yenile";
-            this.btn_yenile.Size = new System.Drawing.Size(75, 32);
-            this.btn_yenile.TabIndex = 0;
-            this.btn_yenile.Text = "YENİLE";
-            this.btn_yenile.UseMnemonic = false;
-            this.btn_yenile.UseVisualStyleBackColor = true;
-            this.btn_yenile.Click += new System.EventHandler(this.btn_yenile_Click);
+            this.btn_com_yenile.Location = new System.Drawing.Point(12, 67);
+            this.btn_com_yenile.Name = "btn_com_yenile";
+            this.btn_com_yenile.Size = new System.Drawing.Size(75, 32);
+            this.btn_com_yenile.TabIndex = 0;
+            this.btn_com_yenile.Text = "YENİLE";
+            this.btn_com_yenile.UseMnemonic = false;
+            this.btn_com_yenile.UseVisualStyleBackColor = true;
+            this.btn_com_yenile.Click += new System.EventHandler(this.btn_yenile_Click);
             // 
             // lbl_anlikveri
             // 
@@ -292,11 +303,114 @@ namespace Robotik_Kol___2
             this.btn_s5_sol.UseVisualStyleBackColor = true;
             this.btn_s5_sol.Click += new System.EventHandler(this.btn_s5_sol_Click);
             // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // bar_s1
+            // 
+            this.bar_s1.Location = new System.Drawing.Point(1068, 130);
+            this.bar_s1.Maximum = 180;
+            this.bar_s1.Name = "bar_s1";
+            this.bar_s1.Size = new System.Drawing.Size(100, 23);
+            this.bar_s1.TabIndex = 24;
+            // 
+            // bar_s3
+            // 
+            this.bar_s3.Location = new System.Drawing.Point(1068, 188);
+            this.bar_s3.Maximum = 180;
+            this.bar_s3.Name = "bar_s3";
+            this.bar_s3.Size = new System.Drawing.Size(100, 23);
+            this.bar_s3.TabIndex = 25;
+            // 
+            // bar_s2
+            // 
+            this.bar_s2.Location = new System.Drawing.Point(1068, 159);
+            this.bar_s2.Maximum = 180;
+            this.bar_s2.Name = "bar_s2";
+            this.bar_s2.Size = new System.Drawing.Size(100, 23);
+            this.bar_s2.TabIndex = 26;
+            // 
+            // bar_s5
+            // 
+            this.bar_s5.Location = new System.Drawing.Point(1068, 246);
+            this.bar_s5.Maximum = 180;
+            this.bar_s5.Name = "bar_s5";
+            this.bar_s5.Size = new System.Drawing.Size(100, 23);
+            this.bar_s5.TabIndex = 29;
+            // 
+            // bar_s6
+            // 
+            this.bar_s6.Location = new System.Drawing.Point(1068, 275);
+            this.bar_s6.Maximum = 180;
+            this.bar_s6.Name = "bar_s6";
+            this.bar_s6.Size = new System.Drawing.Size(100, 23);
+            this.bar_s6.TabIndex = 28;
+            // 
+            // bar_s4
+            // 
+            this.bar_s4.Location = new System.Drawing.Point(1068, 217);
+            this.bar_s4.Maximum = 180;
+            this.bar_s4.Name = "bar_s4";
+            this.bar_s4.Size = new System.Drawing.Size(100, 23);
+            this.bar_s4.TabIndex = 27;
+            // 
+            // btn_motor_yenile
+            // 
+            this.btn_motor_yenile.Location = new System.Drawing.Point(1068, 308);
+            this.btn_motor_yenile.Name = "btn_motor_yenile";
+            this.btn_motor_yenile.Size = new System.Drawing.Size(100, 33);
+            this.btn_motor_yenile.TabIndex = 30;
+            this.btn_motor_yenile.Text = "YENİLE";
+            this.btn_motor_yenile.UseVisualStyleBackColor = true;
+            this.btn_motor_yenile.Click += new System.EventHandler(this.btn_motor_yenile_Click);
+            // 
+            // btn_manuel_com3
+            // 
+            this.btn_manuel_com3.Location = new System.Drawing.Point(103, 67);
+            this.btn_manuel_com3.Name = "btn_manuel_com3";
+            this.btn_manuel_com3.Size = new System.Drawing.Size(73, 33);
+            this.btn_manuel_com3.TabIndex = 31;
+            this.btn_manuel_com3.Text = "COM 3";
+            this.btn_manuel_com3.UseVisualStyleBackColor = true;
+            this.btn_manuel_com3.Click += new System.EventHandler(this.btn_manuel_com3_Click);
+            // 
+            // btn_manuel_com5
+            // 
+            this.btn_manuel_com5.Location = new System.Drawing.Point(182, 66);
+            this.btn_manuel_com5.Name = "btn_manuel_com5";
+            this.btn_manuel_com5.Size = new System.Drawing.Size(72, 33);
+            this.btn_manuel_com5.TabIndex = 32;
+            this.btn_manuel_com5.Text = "COM 5";
+            this.btn_manuel_com5.UseVisualStyleBackColor = true;
+            this.btn_manuel_com5.Click += new System.EventHandler(this.btn_manuel_com5_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(99, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 20);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Manuel Port Bağlantısı";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 520);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_manuel_com5);
+            this.Controls.Add(this.btn_manuel_com3);
+            this.Controls.Add(this.btn_motor_yenile);
+            this.Controls.Add(this.bar_s5);
+            this.Controls.Add(this.bar_s6);
+            this.Controls.Add(this.bar_s4);
+            this.Controls.Add(this.bar_s2);
+            this.Controls.Add(this.bar_s3);
+            this.Controls.Add(this.bar_s1);
             this.Controls.Add(this.btn_s6_sag);
             this.Controls.Add(this.btn_s6_sol);
             this.Controls.Add(this.btn_s5_sag);
@@ -312,7 +426,7 @@ namespace Robotik_Kol___2
             this.Controls.Add(this.btn_kontrolubaslat);
             this.Controls.Add(this.txtbox_anlikveri);
             this.Controls.Add(this.lbl_anlikveri);
-            this.Controls.Add(this.btn_yenile);
+            this.Controls.Add(this.btn_com_yenile);
             this.Controls.Add(this.btn_baglantidurumu);
             this.Controls.Add(this.lbl_baglantidurumu);
             this.Controls.Add(this.btn_baglantikes);
@@ -342,7 +456,7 @@ namespace Robotik_Kol___2
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbl_baglantidurumu;
         private System.Windows.Forms.Button btn_baglantidurumu;
-        private System.Windows.Forms.Button btn_yenile;
+        private System.Windows.Forms.Button btn_com_yenile;
         private System.Windows.Forms.Label lbl_anlikveri;
         private System.Windows.Forms.TextBox txtbox_anlikveri;
         private System.Windows.Forms.Button btn_kontrolubaslat;
@@ -358,6 +472,17 @@ namespace Robotik_Kol___2
         private System.Windows.Forms.Button btn_s6_sol;
         private System.Windows.Forms.Button btn_s5_sag;
         private System.Windows.Forms.Button btn_s5_sol;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.ProgressBar bar_s1;
+        private System.Windows.Forms.ProgressBar bar_s3;
+        private System.Windows.Forms.ProgressBar bar_s2;
+        private System.Windows.Forms.ProgressBar bar_s5;
+        private System.Windows.Forms.ProgressBar bar_s6;
+        private System.Windows.Forms.ProgressBar bar_s4;
+        private System.Windows.Forms.Button btn_motor_yenile;
+        private System.Windows.Forms.Button btn_manuel_com3;
+        private System.Windows.Forms.Button btn_manuel_com5;
+        private System.Windows.Forms.Label label1;
     }
 }
 
