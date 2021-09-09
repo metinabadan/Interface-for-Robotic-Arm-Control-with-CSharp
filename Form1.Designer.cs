@@ -64,9 +64,6 @@ namespace Robotik_Kol___2
             this.bar_s6 = new System.Windows.Forms.ProgressBar();
             this.bar_s4 = new System.Windows.Forms.ProgressBar();
             this.btn_motor_yenile = new System.Windows.Forms.Button();
-            this.btn_manuel_com3 = new System.Windows.Forms.Button();
-            this.btn_manuel_com5 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_comport
@@ -126,6 +123,7 @@ namespace Robotik_Kol___2
             // 
             // timer1
             // 
+            this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lbl_baglantidurumu
@@ -367,43 +365,11 @@ namespace Robotik_Kol___2
             this.btn_motor_yenile.UseVisualStyleBackColor = true;
             this.btn_motor_yenile.Click += new System.EventHandler(this.btn_motor_yenile_Click);
             // 
-            // btn_manuel_com3
-            // 
-            this.btn_manuel_com3.Location = new System.Drawing.Point(103, 67);
-            this.btn_manuel_com3.Name = "btn_manuel_com3";
-            this.btn_manuel_com3.Size = new System.Drawing.Size(73, 33);
-            this.btn_manuel_com3.TabIndex = 31;
-            this.btn_manuel_com3.Text = "COM 3";
-            this.btn_manuel_com3.UseVisualStyleBackColor = true;
-            this.btn_manuel_com3.Click += new System.EventHandler(this.btn_manuel_com3_Click);
-            // 
-            // btn_manuel_com5
-            // 
-            this.btn_manuel_com5.Location = new System.Drawing.Point(182, 66);
-            this.btn_manuel_com5.Name = "btn_manuel_com5";
-            this.btn_manuel_com5.Size = new System.Drawing.Size(72, 33);
-            this.btn_manuel_com5.TabIndex = 32;
-            this.btn_manuel_com5.Text = "COM 5";
-            this.btn_manuel_com5.UseVisualStyleBackColor = true;
-            this.btn_manuel_com5.Click += new System.EventHandler(this.btn_manuel_com5_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(99, 102);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 20);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Manuel Port Bağlantısı";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 520);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_manuel_com5);
-            this.Controls.Add(this.btn_manuel_com3);
             this.Controls.Add(this.btn_motor_yenile);
             this.Controls.Add(this.bar_s5);
             this.Controls.Add(this.bar_s6);
@@ -480,9 +446,6 @@ namespace Robotik_Kol___2
         private System.Windows.Forms.ProgressBar bar_s6;
         private System.Windows.Forms.ProgressBar bar_s4;
         private System.Windows.Forms.Button btn_motor_yenile;
-        private System.Windows.Forms.Button btn_manuel_com3;
-        private System.Windows.Forms.Button btn_manuel_com5;
-        private System.Windows.Forms.Label label1;
     }
 }
 

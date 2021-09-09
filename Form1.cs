@@ -16,10 +16,8 @@ namespace Robotik_Kol___2
         public Form1()
         {
             InitializeComponent();
-            //serialPort1.Open();
             var ports = SerialPort.GetPortNames();
             combobox_comport.DataSource = ports;
-            //serialPort1.PortName = "COM3";
             serialPort1.PortName = combobox_comport.SelectedItem.ToString();
             serialPort1.BaudRate = 9600;
         }
@@ -34,7 +32,6 @@ namespace Robotik_Kol___2
             {
                 if (!serialPort1.IsOpen)
                 {
-                    //serialPort1.PortName = combobox_comport.SelectedItem.ToString();
                     serialPort1.Open();
                     btn_baglantidurumu.Visible = true;
                     btn_baglantidurumu.BackColor = Color.Green;
@@ -59,6 +56,7 @@ namespace Robotik_Kol___2
         private void btn_baglantikes_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            timer2.Stop();
             serialPort1.Close();
             btn_baglantidurumu.BackColor = Color.Red;
             btn_baglantidurumu.Text = "BAĞLANTI KESİLDİ";
@@ -76,6 +74,17 @@ namespace Robotik_Kol___2
             //string bilgi = serialPort1.ReadExisting();
             //txtbox_anlikveri.Text = bilgi.ToString();
             //System.Threading.Thread.Sleep(500);
+
+            try
+            {
+                string result = serialPort1.ReadExisting();
+                txtbox_anlikveri.Text = result.ToString();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+                timer1.Stop();
+            }
         }
 
         private void btn_kontrolubaslat_KeyDown(object sender, KeyEventArgs e)
@@ -281,16 +290,6 @@ namespace Robotik_Kol___2
             bar_s4.Value = 90;
             bar_s5.Value = 90;
             bar_s6.Value = 90;
-        }
-
-        private void btn_manuel_com3_Click(object sender, EventArgs e)
-        {
-            serialPort1.PortName = "COM3";
-        }
-
-        private void btn_manuel_com5_Click(object sender, EventArgs e)
-        {
-            serialPort1.PortName = "COM5";
         }
     }
 }
