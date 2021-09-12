@@ -16,8 +16,10 @@ namespace Robotik_Kol___2
         public Form1()
         {
             InitializeComponent();
+            //serialPort1.Open();
             var ports = SerialPort.GetPortNames();
             combobox_comport.DataSource = ports;
+            //serialPort1.PortName = "COM3";
             serialPort1.PortName = combobox_comport.SelectedItem.ToString();
             serialPort1.BaudRate = 9600;
         }
@@ -32,6 +34,7 @@ namespace Robotik_Kol___2
             {
                 if (!serialPort1.IsOpen)
                 {
+                    //serialPort1.PortName = combobox_comport.SelectedItem.ToString();
                     serialPort1.Open();
                     btn_baglantidurumu.Visible = true;
                     btn_baglantidurumu.BackColor = Color.Green;
@@ -79,6 +82,67 @@ namespace Robotik_Kol___2
             {
                 string result = serialPort1.ReadExisting();
                 txtbox_anlikveri.Text = result.ToString();
+                if (result[3] == '1')
+                {
+                    char value1 = result[6];
+                    char value2 = result[7];
+                    int value1_converted = (int) Char.GetNumericValue(value1);
+                    int value2_converted = (int) Char.GetNumericValue(value2);
+                    int result_value = value1_converted * 10 + value2_converted;
+                    bar_s1.Value = result_value;
+                    lbl_aci1.Text = Convert.ToString(result_value);
+                }
+                
+                else if (result[3] == '2')
+                {
+                    char value1 = result[6];
+                    char value2 = result[7];
+                    int value1_converted = (int)Char.GetNumericValue(value1);
+                    int value2_converted = (int)Char.GetNumericValue(value2);
+                    int result_value = value1_converted * 10 + value2_converted;
+                    bar_s2.Value = result_value;
+                    lbl_aci2.Text = Convert.ToString(result_value);
+                }
+                else if (result[3] == '3')
+                {
+                    char value1 = result[6];
+                    char value2 = result[7];
+                    int value1_converted = (int)Char.GetNumericValue(value1);
+                    int value2_converted = (int)Char.GetNumericValue(value2);
+                    int result_value = value1_converted * 10 + value2_converted;
+                    bar_s3.Value = result_value;
+                    lbl_aci3.Text = Convert.ToString(result_value);
+                }
+                else if (result[3] == '4')
+                {
+                    char value1 = result[6];
+                    char value2 = result[7];
+                    int value1_converted = (int)Char.GetNumericValue(value1);
+                    int value2_converted = (int)Char.GetNumericValue(value2);
+                    int result_value = value1_converted * 10 + value2_converted;
+                    bar_s4.Value = result_value;
+                    lbl_aci4.Text = Convert.ToString(result_value);
+                }
+                else if (result[3] == '5')
+                {
+                    char value1 = result[6];
+                    char value2 = result[7];
+                    int value1_converted = (int)Char.GetNumericValue(value1);
+                    int value2_converted = (int)Char.GetNumericValue(value2);
+                    int result_value = value1_converted * 10 + value2_converted;
+                    bar_s5.Value = result_value;
+                    lbl_aci5.Text = Convert.ToString(result_value);
+                }
+                else if (result[3] == '6')
+                {
+                    char value1 = result[6];
+                    char value2 = result[7];
+                    int value1_converted = (int)Char.GetNumericValue(value1);
+                    int value2_converted = (int)Char.GetNumericValue(value2);
+                    int result_value = value1_converted * 10 + value2_converted;
+                    bar_s6.Value = result_value;
+                    lbl_aci6.Text = Convert.ToString(result_value);
+                }
             }
             catch (Exception exception)
             {
@@ -290,6 +354,16 @@ namespace Robotik_Kol___2
             bar_s4.Value = 90;
             bar_s5.Value = 90;
             bar_s6.Value = 90;
+        }
+
+        private void btn_manuel_com3_Click(object sender, EventArgs e)
+        {
+            serialPort1.PortName = "COM3";
+        }
+
+        private void btn_manuel_com5_Click(object sender, EventArgs e)
+        {
+            serialPort1.PortName = "COM5";
         }
     }
 }

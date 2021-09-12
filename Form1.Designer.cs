@@ -64,6 +64,15 @@ namespace Robotik_Kol___2
             this.bar_s6 = new System.Windows.Forms.ProgressBar();
             this.bar_s4 = new System.Windows.Forms.ProgressBar();
             this.btn_motor_yenile = new System.Windows.Forms.Button();
+            this.btn_manuel_com3 = new System.Windows.Forms.Button();
+            this.btn_manuel_com5 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_aci1 = new System.Windows.Forms.Label();
+            this.lbl_aci2 = new System.Windows.Forms.Label();
+            this.lbl_aci3 = new System.Windows.Forms.Label();
+            this.lbl_aci4 = new System.Windows.Forms.Label();
+            this.lbl_aci5 = new System.Windows.Forms.Label();
+            this.lbl_aci6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_comport
@@ -166,9 +175,9 @@ namespace Robotik_Kol___2
             // 
             // txtbox_anlikveri
             // 
-            this.txtbox_anlikveri.Location = new System.Drawing.Point(490, 102);
+            this.txtbox_anlikveri.Location = new System.Drawing.Point(469, 102);
             this.txtbox_anlikveri.Name = "txtbox_anlikveri";
-            this.txtbox_anlikveri.Size = new System.Drawing.Size(100, 26);
+            this.txtbox_anlikveri.Size = new System.Drawing.Size(146, 26);
             this.txtbox_anlikveri.TabIndex = 9;
             // 
             // btn_kontrolubaslat
@@ -365,11 +374,103 @@ namespace Robotik_Kol___2
             this.btn_motor_yenile.UseVisualStyleBackColor = true;
             this.btn_motor_yenile.Click += new System.EventHandler(this.btn_motor_yenile_Click);
             // 
+            // btn_manuel_com3
+            // 
+            this.btn_manuel_com3.Location = new System.Drawing.Point(103, 67);
+            this.btn_manuel_com3.Name = "btn_manuel_com3";
+            this.btn_manuel_com3.Size = new System.Drawing.Size(73, 33);
+            this.btn_manuel_com3.TabIndex = 31;
+            this.btn_manuel_com3.Text = "COM 3";
+            this.btn_manuel_com3.UseVisualStyleBackColor = true;
+            this.btn_manuel_com3.Click += new System.EventHandler(this.btn_manuel_com3_Click);
+            // 
+            // btn_manuel_com5
+            // 
+            this.btn_manuel_com5.Location = new System.Drawing.Point(182, 66);
+            this.btn_manuel_com5.Name = "btn_manuel_com5";
+            this.btn_manuel_com5.Size = new System.Drawing.Size(72, 33);
+            this.btn_manuel_com5.TabIndex = 32;
+            this.btn_manuel_com5.Text = "COM 5";
+            this.btn_manuel_com5.UseVisualStyleBackColor = true;
+            this.btn_manuel_com5.Click += new System.EventHandler(this.btn_manuel_com5_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(99, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 20);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Manuel Port Bağlantısı";
+            // 
+            // lbl_aci1
+            // 
+            this.lbl_aci1.AutoSize = true;
+            this.lbl_aci1.Location = new System.Drawing.Point(1011, 133);
+            this.lbl_aci1.Name = "lbl_aci1";
+            this.lbl_aci1.Size = new System.Drawing.Size(27, 20);
+            this.lbl_aci1.TabIndex = 34;
+            this.lbl_aci1.Text = "90";
+            // 
+            // lbl_aci2
+            // 
+            this.lbl_aci2.AutoSize = true;
+            this.lbl_aci2.Location = new System.Drawing.Point(1011, 162);
+            this.lbl_aci2.Name = "lbl_aci2";
+            this.lbl_aci2.Size = new System.Drawing.Size(27, 20);
+            this.lbl_aci2.TabIndex = 35;
+            this.lbl_aci2.Text = "90";
+            // 
+            // lbl_aci3
+            // 
+            this.lbl_aci3.AutoSize = true;
+            this.lbl_aci3.Location = new System.Drawing.Point(1011, 188);
+            this.lbl_aci3.Name = "lbl_aci3";
+            this.lbl_aci3.Size = new System.Drawing.Size(27, 20);
+            this.lbl_aci3.TabIndex = 36;
+            this.lbl_aci3.Text = "90";
+            // 
+            // lbl_aci4
+            // 
+            this.lbl_aci4.AutoSize = true;
+            this.lbl_aci4.Location = new System.Drawing.Point(1011, 217);
+            this.lbl_aci4.Name = "lbl_aci4";
+            this.lbl_aci4.Size = new System.Drawing.Size(27, 20);
+            this.lbl_aci4.TabIndex = 37;
+            this.lbl_aci4.Text = "90";
+            // 
+            // lbl_aci5
+            // 
+            this.lbl_aci5.AutoSize = true;
+            this.lbl_aci5.Location = new System.Drawing.Point(1011, 249);
+            this.lbl_aci5.Name = "lbl_aci5";
+            this.lbl_aci5.Size = new System.Drawing.Size(27, 20);
+            this.lbl_aci5.TabIndex = 38;
+            this.lbl_aci5.Text = "90";
+            // 
+            // lbl_aci6
+            // 
+            this.lbl_aci6.AutoSize = true;
+            this.lbl_aci6.Location = new System.Drawing.Point(1011, 282);
+            this.lbl_aci6.Name = "lbl_aci6";
+            this.lbl_aci6.Size = new System.Drawing.Size(27, 20);
+            this.lbl_aci6.TabIndex = 39;
+            this.lbl_aci6.Text = "90";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 520);
+            this.Controls.Add(this.lbl_aci6);
+            this.Controls.Add(this.lbl_aci5);
+            this.Controls.Add(this.lbl_aci4);
+            this.Controls.Add(this.lbl_aci3);
+            this.Controls.Add(this.lbl_aci2);
+            this.Controls.Add(this.lbl_aci1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_manuel_com5);
+            this.Controls.Add(this.btn_manuel_com3);
             this.Controls.Add(this.btn_motor_yenile);
             this.Controls.Add(this.bar_s5);
             this.Controls.Add(this.bar_s6);
@@ -446,6 +547,15 @@ namespace Robotik_Kol___2
         private System.Windows.Forms.ProgressBar bar_s6;
         private System.Windows.Forms.ProgressBar bar_s4;
         private System.Windows.Forms.Button btn_motor_yenile;
+        private System.Windows.Forms.Button btn_manuel_com3;
+        private System.Windows.Forms.Button btn_manuel_com5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_aci1;
+        private System.Windows.Forms.Label lbl_aci2;
+        private System.Windows.Forms.Label lbl_aci3;
+        private System.Windows.Forms.Label lbl_aci4;
+        private System.Windows.Forms.Label lbl_aci5;
+        private System.Windows.Forms.Label lbl_aci6;
     }
 }
 
