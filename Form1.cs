@@ -18,9 +18,14 @@ namespace Robotik_Kol___2
             InitializeComponent();
             //serialPort1.Open();
             var ports = SerialPort.GetPortNames();
-            combobox_comport.DataSource = ports;
+            foreach (string port in ports)
+            {
+                combobox_comport.Items.Add(port);
+                combobox_comport.SelectedIndex = 0;
+            }
+            //combobox_comport.DataSource = ports;
             //serialPort1.PortName = "COM3";
-            serialPort1.PortName = combobox_comport.SelectedItem.ToString();
+            //serialPort1.PortName = combobox_comport.SelectedItem.ToString();
             serialPort1.BaudRate = 9600;
         }
 
@@ -29,6 +34,8 @@ namespace Robotik_Kol___2
             timer1.Start();
 
             timer2.Start();
+
+            serialPort1.PortName = combobox_comport.Text;
 
             try
             {
@@ -39,6 +46,7 @@ namespace Robotik_Kol___2
                     btn_baglantidurumu.Visible = true;
                     btn_baglantidurumu.BackColor = Color.Green;
                     btn_baglantidurumu.Text = "BAĞLANDI";
+
                     bar_s1.Value = 90;
                     bar_s2.Value = 90;
                     bar_s3.Value = 90;
@@ -72,6 +80,8 @@ namespace Robotik_Kol___2
             combobox_comport.DataSource = ports;
         }
 
+        //public int deneme = 1;
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             //string bilgi = serialPort1.ReadExisting();
@@ -82,67 +92,238 @@ namespace Robotik_Kol___2
             {
                 string result = serialPort1.ReadExisting();
                 txtbox_anlikveri.Text = result.ToString();
-                if (result[3] == '1')
+                listbox_veri.Text = result.ToString();
+                listbox_veri.SelectedIndex = listbox_veri.Items.Count - 1;
+                /*
+                deneme += 5;
+                string result2 = "Aci7 =" + deneme;
+                txtbox_anlikveri.Text = result2.ToString();
+                listbox_veri.Items.Add(result2);
+                if (result2[3] == '7' && result2.Length == 7)
                 {
-                    char value1 = result[6];
-                    char value2 = result[7];
-                    int value1_converted = (int) Char.GetNumericValue(value1);
-                    int value2_converted = (int) Char.GetNumericValue(value2);
-                    int result_value = value1_converted * 10 + value2_converted;
-                    bar_s1.Value = result_value;
-                    lbl_aci1.Text = Convert.ToString(result_value);
+                    char value1 = result2[6];
+                    int value1_converted = (int)Char.GetNumericValue(value1);
+                    bar_s2.Value = value1_converted;
+                    lbl_aci2.Text = Convert.ToString(value1_converted);
                 }
-                
-                else if (result[3] == '2')
+
+                if (result2[3] == '7' && result2.Length == 8)
                 {
-                    char value1 = result[6];
-                    char value2 = result[7];
+                    char value1 = result2[6];
+                    char value2 = result2[7];
                     int value1_converted = (int)Char.GetNumericValue(value1);
                     int value2_converted = (int)Char.GetNumericValue(value2);
                     int result_value = value1_converted * 10 + value2_converted;
+                    bar_s2.Value = value1_converted;
+                    lbl_aci2.Text = Convert.ToString(result_value);
+                }
+
+                if (result2[3] == '7' && result2.Length == 9)
+                {
+                    char value1 = result2[6];
+                    char value2 = result2[7];
+                    char value3 = result2[8];
+                    int value1_converted = (int)Char.GetNumericValue(value1);
+                    int value2_converted = (int)Char.GetNumericValue(value2);
+                    int value3_converted = (int)Char.GetNumericValue(value3);
+                    int result_value = value1_converted * 100 + value2_converted * 10 + value3_converted;
                     bar_s2.Value = result_value;
                     lbl_aci2.Text = Convert.ToString(result_value);
                 }
-                else if (result[3] == '3')
+                */
+
+                if (result.Length == 8)
                 {
-                    char value1 = result[6];
-                    char value2 = result[7];
-                    int value1_converted = (int)Char.GetNumericValue(value1);
-                    int value2_converted = (int)Char.GetNumericValue(value2);
-                    int result_value = value1_converted * 10 + value2_converted;
-                    bar_s3.Value = result_value;
-                    lbl_aci3.Text = Convert.ToString(result_value);
+                    if (result[3] == '1')
+                    {
+                        char value1 = result[6];
+                        char value2 = result[7];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        int value2_converted = (int)Char.GetNumericValue(value2);
+                        int result_value = value1_converted * 10 + value2_converted;
+                        bar_s1.Value = result_value;
+                        lbl_aci1.Text = Convert.ToString(result_value);
+                    }
+
+                    else if (result[3] == '2')
+                    {
+                        char value1 = result[6];
+                        char value2 = result[7];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        int value2_converted = (int)Char.GetNumericValue(value2);
+                        int result_value = value1_converted * 10 + value2_converted;
+                        bar_s2.Value = result_value;
+                        lbl_aci2.Text = Convert.ToString(result_value);
+                    }
+                    else if (result[3] == '3')
+                    {
+                        char value1 = result[6];
+                        char value2 = result[7];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        int value2_converted = (int)Char.GetNumericValue(value2);
+                        int result_value = value1_converted * 10 + value2_converted;
+                        bar_s3.Value = result_value;
+                        lbl_aci3.Text = Convert.ToString(result_value);
+                    }
+                    else if (result[3] == '4')
+                    {
+                        char value1 = result[6];
+                        char value2 = result[7];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        int value2_converted = (int)Char.GetNumericValue(value2);
+                        int result_value = value1_converted * 10 + value2_converted;
+                        bar_s4.Value = result_value;
+                        lbl_aci4.Text = Convert.ToString(result_value);
+                    }
+                    else if (result[3] == '5')
+                    {
+                        char value1 = result[6];
+                        char value2 = result[7];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        int value2_converted = (int)Char.GetNumericValue(value2);
+                        int result_value = value1_converted * 10 + value2_converted;
+                        bar_s5.Value = result_value;
+                        lbl_aci5.Text = Convert.ToString(result_value);
+                    }
+                    else if (result[3] == '6')
+                    {
+                        char value1 = result[6];
+                        char value2 = result[7];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        int value2_converted = (int)Char.GetNumericValue(value2);
+                        int result_value = value1_converted * 10 + value2_converted;
+                        bar_s6.Value = result_value;
+                        lbl_aci6.Text = Convert.ToString(result_value);
+                    }
                 }
-                else if (result[3] == '4')
+                else if (result.Length == 9)
                 {
-                    char value1 = result[6];
-                    char value2 = result[7];
-                    int value1_converted = (int)Char.GetNumericValue(value1);
-                    int value2_converted = (int)Char.GetNumericValue(value2);
-                    int result_value = value1_converted * 10 + value2_converted;
-                    bar_s4.Value = result_value;
-                    lbl_aci4.Text = Convert.ToString(result_value);
+                    if (result[3] == '1')
+                    {
+                        char value1 = result[6];
+                        char value2 = result[7];
+                        char value3 = result[8];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        int value2_converted = (int)Char.GetNumericValue(value2);
+                        int value3_converted = (int)Char.GetNumericValue(value3);
+                        int result_value = value1_converted * 100 + value2_converted * 10 + value3_converted;
+                        bar_s1.Value = result_value;
+                        lbl_aci1.Text = Convert.ToString(result_value);
+                    }
+
+                    else if (result[3] == '2')
+                    {
+                        char value1 = result[6];
+                        char value2 = result[7];
+                        char value3 = result[8];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        int value2_converted = (int)Char.GetNumericValue(value2);
+                        int value3_converted = (int)Char.GetNumericValue(value3);
+                        int result_value = value1_converted * 100 + value2_converted * 10 + value3_converted;
+                        bar_s2.Value = result_value;
+                        lbl_aci2.Text = Convert.ToString(result_value);
+                    }
+                    else if (result[3] == '3')
+                    {
+                        char value1 = result[6];
+                        char value2 = result[7];
+                        char value3 = result[8];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        int value2_converted = (int)Char.GetNumericValue(value2);
+                        int value3_converted = (int)Char.GetNumericValue(value3);
+                        int result_value = value1_converted * 100 + value2_converted * 10 + value3_converted;
+                        bar_s3.Value = result_value;
+                        lbl_aci3.Text = Convert.ToString(result_value);
+                    }
+                    else if (result[3] == '4')
+                    {
+                        char value1 = result[6];
+                        char value2 = result[7];
+                        char value3 = result[8];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        int value2_converted = (int)Char.GetNumericValue(value2);
+                        int value3_converted = (int)Char.GetNumericValue(value3);
+                        int result_value = value1_converted * 100 + value2_converted * 10 + value3_converted;
+                        bar_s4.Value = result_value;
+                        lbl_aci4.Text = Convert.ToString(result_value);
+                    }
+                    else if (result[3] == '5')
+                    {
+                        char value1 = result[6];
+                        char value2 = result[7];
+                        char value3 = result[8];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        int value2_converted = (int)Char.GetNumericValue(value2);
+                        int value3_converted = (int)Char.GetNumericValue(value3);
+                        int result_value = value1_converted * 100 + value2_converted * 10 + value3_converted;
+                        bar_s5.Value = result_value;
+                        lbl_aci5.Text = Convert.ToString(result_value);
+                    }
+                    else if (result[3] == '6')
+                    {
+                        char value1 = result[6];
+                        char value2 = result[7];
+                        char value3 = result[8];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        int value2_converted = (int)Char.GetNumericValue(value2);
+                        int value3_converted = (int)Char.GetNumericValue(value3);
+                        int result_value = value1_converted * 100 + value2_converted * 10 + value3_converted;
+                        bar_s6.Value = result_value;
+                        lbl_aci6.Text = Convert.ToString(result_value);
+                    }
                 }
-                else if (result[3] == '5')
+                else if (result.Length == 7)
                 {
-                    char value1 = result[6];
-                    char value2 = result[7];
-                    int value1_converted = (int)Char.GetNumericValue(value1);
-                    int value2_converted = (int)Char.GetNumericValue(value2);
-                    int result_value = value1_converted * 10 + value2_converted;
-                    bar_s5.Value = result_value;
-                    lbl_aci5.Text = Convert.ToString(result_value);
+                    if (result[3] == '1')
+                    {
+                        char value1 = result[6];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        bar_s1.Value = value1_converted;
+                        lbl_aci1.Text = Convert.ToString(value1_converted);
+                    }
+                    else if (result[3] == '2')
+                    {
+                        char value1 = result[6];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        bar_s2.Value = value1_converted;
+                        lbl_aci2.Text = Convert.ToString(value1_converted);
+                    }
+                    else if (result[3] == '3')
+                    {
+                        char value1 = result[6];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        bar_s3.Value = value1_converted;
+                        lbl_aci3.Text = Convert.ToString(value1_converted);
+                    }
+                    else if (result[3] == '4')
+                    {
+                        char value1 = result[6];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        bar_s4.Value = value1_converted;
+                        lbl_aci4.Text = Convert.ToString(value1_converted);
+                    }
+                    else if (result[3] == '5')
+                    {
+                        char value1 = result[6];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        bar_s5.Value = value1_converted;
+                        lbl_aci5.Text = Convert.ToString(value1_converted);
+                    }
+                    else if (result[3] == '6')
+                    {
+                        char value1 = result[6];
+                        int value1_converted = (int)Char.GetNumericValue(value1);
+                        bar_s6.Value = value1_converted;
+                        lbl_aci6.Text = Convert.ToString(value1_converted);
+                    }
+
                 }
-                else if (result[3] == '6')
+                else if (result[0] == '-')
                 {
-                    char value1 = result[6];
-                    char value2 = result[7];
-                    int value1_converted = (int)Char.GetNumericValue(value1);
-                    int value2_converted = (int)Char.GetNumericValue(value2);
-                    int result_value = value1_converted * 10 + value2_converted;
-                    bar_s6.Value = result_value;
-                    lbl_aci6.Text = Convert.ToString(result_value);
+                    // basınc durumu
                 }
+                
+
             }
             catch (Exception exception)
             {
@@ -209,120 +390,72 @@ namespace Robotik_Kol___2
         {
             serialPort1.WriteLine("w");
             change_color(btn_s1_sol);
-            if (bar_s1.Value >= 5)
-            {
-                bar_s1.Value -= 5;
-            }
         }
 
         private void btn_s1_sag_Click(object sender, EventArgs e)
         {
             serialPort1.WriteLine("a");
             change_color(btn_s1_sag);
-            if (bar_s1.Value <= 180)
-            {
-                bar_s1.Value += 5;
-            }
         }
 
         private void btn_s2_sol_Click(object sender, EventArgs e)
         {
             serialPort1.WriteLine("e");
             change_color(btn_s2_sol);
-            if (bar_s2.Value >= 5)
-            {
-                bar_s2.Value -= 5;
-            }
         }
 
         private void btn_s2_sag_Click(object sender, EventArgs e)
         {
             serialPort1.WriteLine("s");
             change_color(btn_s2_sag);
-            if (bar_s2.Value <= 180)
-            {
-                bar_s2.Value += 5;
-            }
         }
 
         private void btn_s3_sol_Click(object sender, EventArgs e)
         {
             serialPort1.WriteLine("r");
             change_color(btn_s3_sol);
-            if (bar_s3.Value >= 5)
-            {
-                bar_s3.Value -= 5;
-            }
         }
 
         private void btn_s3_sag_Click(object sender, EventArgs e)
         {
             serialPort1.WriteLine("d");
             change_color(btn_s3_sag);
-            if (bar_s3.Value <= 180)
-            {
-                bar_s3.Value += 5;
-            }
         }
 
         private void btn_s4_sol_Click(object sender, EventArgs e)
         {
             serialPort1.WriteLine("t");
             change_color(btn_s4_sol);
-            if (bar_s4.Value >= 5)
-            {
-                bar_s4.Value -= 5;
-            }
         }
 
         private void btn_s4_sag_Click(object sender, EventArgs e)
         {
             serialPort1.WriteLine("f");
             change_color(btn_s4_sag);
-            if (bar_s4.Value <= 180)
-            {
-                bar_s4.Value += 5;
-            }
         }
 
         private void btn_s5_sol_Click(object sender, EventArgs e)
         {
             serialPort1.WriteLine("y");
             change_color(btn_s5_sol);
-            if (bar_s5.Value >= 5)
-            {
-                bar_s5.Value -= 5;
-            }
         }
 
         private void btn_s5_sag_Click(object sender, EventArgs e)
         {
             serialPort1.WriteLine("g");
             change_color(btn_s5_sag);
-            if (bar_s5.Value <= 180)
-            {
-                bar_s5.Value += 5;
-            }
         }
 
         private void btn_s6_sol_Click(object sender, EventArgs e)
         {
             serialPort1.WriteLine("u");
             change_color(btn_s6_sol);
-            if (bar_s6.Value >= 5)
-            {
-                bar_s6.Value -= 5;
-            }
         }
 
         private void btn_s6_sag_Click(object sender, EventArgs e)
         {
             serialPort1.WriteLine("h");
             change_color(btn_s6_sag);
-            if (bar_s6.Value <= 180)
-            {
-                bar_s6.Value += 5;
-            }
         }
 
         private void change_color(Button x)

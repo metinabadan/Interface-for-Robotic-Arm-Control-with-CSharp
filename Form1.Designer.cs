@@ -73,6 +73,7 @@ namespace Robotik_Kol___2
             this.lbl_aci4 = new System.Windows.Forms.Label();
             this.lbl_aci5 = new System.Windows.Forms.Label();
             this.lbl_aci6 = new System.Windows.Forms.Label();
+            this.listbox_veri = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lbl_comport
@@ -175,9 +176,10 @@ namespace Robotik_Kol___2
             // 
             // txtbox_anlikveri
             // 
-            this.txtbox_anlikveri.Location = new System.Drawing.Point(469, 102);
+            this.txtbox_anlikveri.Location = new System.Drawing.Point(422, 102);
+            this.txtbox_anlikveri.Multiline = true;
             this.txtbox_anlikveri.Name = "txtbox_anlikveri";
-            this.txtbox_anlikveri.Size = new System.Drawing.Size(146, 26);
+            this.txtbox_anlikveri.Size = new System.Drawing.Size(254, 26);
             this.txtbox_anlikveri.TabIndex = 9;
             // 
             // btn_kontrolubaslat
@@ -406,7 +408,7 @@ namespace Robotik_Kol___2
             // lbl_aci1
             // 
             this.lbl_aci1.AutoSize = true;
-            this.lbl_aci1.Location = new System.Drawing.Point(1011, 133);
+            this.lbl_aci1.Location = new System.Drawing.Point(1035, 133);
             this.lbl_aci1.Name = "lbl_aci1";
             this.lbl_aci1.Size = new System.Drawing.Size(27, 20);
             this.lbl_aci1.TabIndex = 34;
@@ -415,7 +417,7 @@ namespace Robotik_Kol___2
             // lbl_aci2
             // 
             this.lbl_aci2.AutoSize = true;
-            this.lbl_aci2.Location = new System.Drawing.Point(1011, 162);
+            this.lbl_aci2.Location = new System.Drawing.Point(1035, 159);
             this.lbl_aci2.Name = "lbl_aci2";
             this.lbl_aci2.Size = new System.Drawing.Size(27, 20);
             this.lbl_aci2.TabIndex = 35;
@@ -424,7 +426,7 @@ namespace Robotik_Kol___2
             // lbl_aci3
             // 
             this.lbl_aci3.AutoSize = true;
-            this.lbl_aci3.Location = new System.Drawing.Point(1011, 188);
+            this.lbl_aci3.Location = new System.Drawing.Point(1035, 188);
             this.lbl_aci3.Name = "lbl_aci3";
             this.lbl_aci3.Size = new System.Drawing.Size(27, 20);
             this.lbl_aci3.TabIndex = 36;
@@ -433,7 +435,7 @@ namespace Robotik_Kol___2
             // lbl_aci4
             // 
             this.lbl_aci4.AutoSize = true;
-            this.lbl_aci4.Location = new System.Drawing.Point(1011, 217);
+            this.lbl_aci4.Location = new System.Drawing.Point(1035, 217);
             this.lbl_aci4.Name = "lbl_aci4";
             this.lbl_aci4.Size = new System.Drawing.Size(27, 20);
             this.lbl_aci4.TabIndex = 37;
@@ -442,7 +444,7 @@ namespace Robotik_Kol___2
             // lbl_aci5
             // 
             this.lbl_aci5.AutoSize = true;
-            this.lbl_aci5.Location = new System.Drawing.Point(1011, 249);
+            this.lbl_aci5.Location = new System.Drawing.Point(1035, 246);
             this.lbl_aci5.Name = "lbl_aci5";
             this.lbl_aci5.Size = new System.Drawing.Size(27, 20);
             this.lbl_aci5.TabIndex = 38;
@@ -451,17 +453,27 @@ namespace Robotik_Kol___2
             // lbl_aci6
             // 
             this.lbl_aci6.AutoSize = true;
-            this.lbl_aci6.Location = new System.Drawing.Point(1011, 282);
+            this.lbl_aci6.Location = new System.Drawing.Point(1035, 275);
             this.lbl_aci6.Name = "lbl_aci6";
             this.lbl_aci6.Size = new System.Drawing.Size(27, 20);
             this.lbl_aci6.TabIndex = 39;
             this.lbl_aci6.Text = "90";
+            // 
+            // listbox_veri
+            // 
+            this.listbox_veri.FormattingEnabled = true;
+            this.listbox_veri.ItemHeight = 20;
+            this.listbox_veri.Location = new System.Drawing.Point(673, 237);
+            this.listbox_veri.Name = "listbox_veri";
+            this.listbox_veri.Size = new System.Drawing.Size(287, 244);
+            this.listbox_veri.TabIndex = 40;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 520);
+            this.Controls.Add(this.listbox_veri);
             this.Controls.Add(this.lbl_aci6);
             this.Controls.Add(this.lbl_aci5);
             this.Controls.Add(this.lbl_aci4);
@@ -556,6 +568,7 @@ namespace Robotik_Kol___2
         private System.Windows.Forms.Label lbl_aci4;
         private System.Windows.Forms.Label lbl_aci5;
         private System.Windows.Forms.Label lbl_aci6;
+        private System.Windows.Forms.ListBox listbox_veri;
     }
 }
 
